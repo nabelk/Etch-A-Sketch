@@ -1,8 +1,15 @@
 body {
     background-color: azure;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    min-height: 100vh;
 }
 
 #main {
-    border: 2px solid black;
-    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 693px; width: 632px; */
 }
