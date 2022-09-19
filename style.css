@@ -11,5 +11,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* height: 693px; width: 632px; */
+    height: auto; width: 632px;
+    /* border: 1px solid greenyellow; */
 }
