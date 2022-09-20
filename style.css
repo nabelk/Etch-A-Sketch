@@ -2,15 +2,20 @@ body {
     background-color: azure;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 0px;
     min-height: 100vh;
 }
 
 #main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto; width: 632px;
-    /* border: 1px solid greenyellow; */
+    display: inline-grid;
+    grid-template-columns: repeat(16, 2fr);
+    grid-template-rows: repeat(16, 2fr);;
+    height: 600px; width: 600px;
+    margin: 0px; padding: 0px;
+    border: 1px solid black;
+}
+
+.grid-div {
+    border: 1px solid red; 
 }
