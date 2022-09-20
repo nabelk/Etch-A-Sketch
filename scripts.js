@@ -1,21 +1,20 @@
-// Create 16X16 grid
 const mainDiv = document.querySelector("#main");
 
-for (let x = 0; x < 16; x++ ){
-    const verticalDiv = document.createElement("div");
-    verticalDiv.setAttribute("style", "height: auto;  width: auto; display:flex ")
-    mainDiv.appendChild(verticalDiv);
+// Create default 16X16 grid
+function defaultGrid(grid){
 
-    for (let i = 0; i < 16; i++){
-        const horizontalDiv = document.createElement("div");
-        horizontalDiv.className = "hdiv"
-        horizontalDiv.setAttribute("style", " border: 1px solid green; width:37.5px; height: 37.5px; ")
-        verticalDiv.appendChild(horizontalDiv);
+    let amountGrids = grid * grid;
+    for (let i = 0; i < amountGrids; i++){
+        const gridDiv = document.createElement("div");
+        gridDiv.className = "grid-div"
+        mainDiv.appendChild(gridDiv);
     }
 }
 
+defaultGrid(16);
+
 // Adding an event when mouse entering and change colour of the grid
-const smallGrid = document.querySelectorAll(".hdiv");
+const smallGrid = document.querySelectorAll(".grid-div");
 smallGrid.forEach(grid => {
     grid.addEventListener("mouseenter", changeColor);
     function changeColor(){
