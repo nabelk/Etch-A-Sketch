@@ -1,21 +1,44 @@
 body {
     background-color: azure;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0px;
     min-height: 100vh;
 }
 
-#main {
+#primary {
+    display:flex;
+    margin-right: 150px;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+#settings{
+    display: flex; 
+    flex-direction:column; 
+    justify-content: center;
+    gap: 20px; 
+}
+
+#main-grid {
     display: inline-grid;
     grid-template-columns: repeat(16, 2fr);
     grid-template-rows: repeat(16, 2fr);;
-    height: 600px; width: 600px;
+    height: 550px; width: 550px;
     margin: 0px; padding: 0px;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 .grid-div {
-    border: 1px solid red; 
+    border: 1px solid lightsalmon; 
+    border-radius: 5%;
+}
+
+button {
+    background-color: bisque;
+    border-radius: 5px;
+    height: 30px;
 }
