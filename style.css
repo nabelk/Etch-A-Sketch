@@ -2,10 +2,13 @@ body {
     background-color: azure;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin: 0px;
     min-height: 100vh;
+}
+
+.title {
+    font-size: 45px;
 }
 
 #primary {
