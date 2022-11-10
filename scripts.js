@@ -16,18 +16,14 @@ createGrid(16);
 
 // Custom grid generator
 
-const customBtn = document.querySelector(".custom");
+const range = document.querySelector("#custom");
+const rangevalue = document.querySelector(".range-value");
+
+rangevalue.textContent = range.value;
 
 let changeGrids = () => {
-    let userInputValue = prompt("Enter some numbers");
-    if (userInputValue <= 0 || userInputValue > 100){
-        alert("Numbers between 1-100 only");
-        userInputValue = prompt ("Give another try!");
-        if(userInputValue <= 0 || userInputValue > 100){
-            alert("Again!? I'm a machine which is not that smart but let me just choose for you :)");
-            userInputValue = 16;
-        }
-    }
+    rangevalue.textContent = range.value;
+    let userInputValue = Number(range.value);
     mainDiv.textContent = "";
     mainDiv.style.setProperty(
         "grid-template-columns", `repeat(${userInputValue}, 2fr)`
@@ -40,7 +36,7 @@ let changeGrids = () => {
     triggerChange();
 }
 
-customBtn.addEventListener("click", changeGrids);
+range.addEventListener("input", changeGrids)
 
 // Function for events (button & hover)
 
@@ -50,6 +46,7 @@ function triggerChange(){
     const smallGrid = document.querySelectorAll(".grid-div");
     const colourfulBtn = document.querySelector(".colourful");
     const basicBtn = document.querySelector(".basic");
+
     smallGrid.forEach(grid => {
         
         function basicMode(){
@@ -60,18 +57,16 @@ function triggerChange(){
         basicMode();
         
         function colourfulMode(){
-            colourfulBtn.addEventListener("click", () => {
                 grid.addEventListener("mouseenter", () => {
                     // 16777217 is the amount of color combinations available in web
                     let randomNum = Math.floor(Math.random() * 16777217).toString(16);
                     console.log(randomNum);
                     grid.style.background = `#${randomNum}`;
                 })
-                
-            });
             
         }
-        colourfulMode();
+
+        colourfulBtn.addEventListener("click", colourfulMode);
         basicBtn.addEventListener("click", basicMode);
 
     })
